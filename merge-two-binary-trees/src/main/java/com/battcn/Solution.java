@@ -17,23 +17,16 @@ public class Solution {
      * @return 合并后的结果树
      */
     private static TreeNode mergeTrees(TreeNode tree1, TreeNode tree2) {
-        TreeNode node = null;
-        if (tree1 == null && tree2 == null) {
-            return node;
-        } else if (tree1 != null && tree2 == null) {
-            node = tree1;
-        } else if (tree2 != null && tree1 == null) {
-            node = tree2;
-        }
         if (tree1 != null && tree2 != null) {
             // 合并当前根节点
-            node = new TreeNode(tree1.getVal() + tree2.getVal());
+            TreeNode node = new TreeNode(tree1.getVal() + tree2.getVal());
             // 合并当前节点左叶
             node.setLeft(mergeTrees(tree1.getLeft(), tree2.getLeft()));
             // 合并当前节点右叶
             node.setRight(mergeTrees(tree1.getRight(), tree2.getRight()));
+            return node;
         }
-        return node;
+        return tree1 == null && tree2 == null ? null : tree1 != null ? tree1 : tree2;
     }
 
     public static void main(String[] args) {
