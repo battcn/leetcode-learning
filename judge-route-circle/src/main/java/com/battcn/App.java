@@ -6,6 +6,7 @@ package com.battcn;
  * 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。
  *
  * @author Levin
+ * @see <a href="https://leetcode-cn.com/problems/judge-route-circle/description/">判断路线成圈</a>
  * @since 2018/8/3 0003
  */
 public class App {
